@@ -1,0 +1,756 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (250.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (171.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100925015632)
+  [4;36;1mSQL (203.1ms)[0m   [0;1mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `filename` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925015632')[0m
+Migrating to CreateSlides (20100925032119)
+  [4;36;1mSQL (78.1ms)[0m   [0;1mCREATE TABLE `slides` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `position` int(11), `photo_id` int(11), `slideshow_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032119')[0m
+Migrating to CreateSlideshows (20100925032148)
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCREATE TABLE `slideshows` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032148')[0m
+Migrating to CreateCategories (20100925032227)
+  [4;36;1mSQL (46.9ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032227')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `photos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `photos`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `slides`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `slides`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `slides`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `slideshows`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `slideshows`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `slideshows`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (171.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100925015632)
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `filename` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925015632')[0m
+Migrating to CreateSlides (20100925032119)
+  [4;36;1mSQL (140.6ms)[0m   [0;1mCREATE TABLE `slides` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `position` int(11), `photo_id` int(11), `slideshow_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032119')[0m
+Migrating to CreateSlideshows (20100925032148)
+  [4;36;1mSQL (78.1ms)[0m   [0;1mCREATE TABLE `slideshows` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032148')[0m
+Migrating to CreateCategories (20100925032227)
+  [4;36;1mSQL (46.9ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `categories_photos` (`category_id` int(11), `photo_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCategory Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCategory Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100925015632)
+Migrating to CreateSlides (20100925032119)
+Migrating to CreateSlideshows (20100925032148)
+Migrating to CreateCategories (20100925032227)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'categories' already exists: CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSlideshows (20100925032148)
+  [4;36;1mSQL (31.2ms)[0m   [0;1mDROP TABLE `slideshows`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100925032148'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `categories`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `categories_photos`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `categories_photos`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `categories_photos`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `photos`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `photos`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `slides`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `slides`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `slides`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100925015632)
+Migrating to CreateSlides (20100925032119)
+Migrating to CreateSlideshows (20100925032148)
+  [4;36;1mSQL (93.7ms)[0m   [0;1mCREATE TABLE `slideshows` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032148')[0m
+Migrating to CreateCategories (20100925032227)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'categories' already exists: CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `categories_photos` (`category_id` int(11), `photo_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (109.4ms)[0m   [0mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `filename` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `slides` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `position` int(11), `photo_id` int(11), `slideshow_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100925032119')[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100925015632')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100925015632)
+Migrating to CreateSlides (20100925032119)
+Migrating to CreateSlideshows (20100925032148)
+  [4;36;1mSQL (78.1ms)[0m   [0;1mCREATE TABLE `slideshows` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032148')[0m
+Migrating to CreateCategories (20100925032227)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'categories' already exists: CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100925015632)
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `filename` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925015632')[0m
+Migrating to CreateSlides (20100925032119)
+  [4;36;1mSQL (78.1ms)[0m   [0;1mCREATE TABLE `slides` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `position` int(11), `photo_id` int(11), `slideshow_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032119')[0m
+Migrating to CreateSlideshows (20100925032148)
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCREATE TABLE `slideshows` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100925032148')[0m
+Migrating to CreateCategories (20100925032227)
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mCREATE TABLE `categories_photos` (`category_id` int(11), `photo_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mCategory Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` [0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100925032227')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `categories_photos`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `categories_photos`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `categories_photos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `photos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `photos`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `slides`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `slides`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `slides`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `slideshows`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `slideshows`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `slideshows`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.7ms)[0m   [0mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (109.4ms)[0m   [0mCREATE TABLE `categories_photos` (`category_id` int(11), `photo_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.7ms)[0m   [0mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `filename` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.7ms)[0m   [0mCREATE TABLE `slides` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `position` int(11), `photo_id` int(11), `slideshow_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `slideshows` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (171.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100925032227')[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100925015632')[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100925032119')[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100925032148')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mCategory Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`name` = 'Animals') LIMIT 1[0m
+  [4;36;1mcategories_photos Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `categories_photos`[0m
+  [4;35;1mPhoto Load (15.6ms)[0m   [0mSELECT * FROM `photos` INNER JOIN `categories_photos` ON `photos`.id = `categories_photos`.photo_id WHERE (`categories_photos`.category_id = 3 ) [0m
+  [4;36;1mPhoto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Create (0.0ms)[0m   [0;1mINSERT INTO `photos` (`created_at`, `updated_at`, `filename`) VALUES('2010-09-25 06:11:47', '2010-09-25 06:11:47', 'cat.jpg')[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `categories_photos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO `categories_photos` (`category_id`, `photo_id`) VALUES (3, 10)[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSlideshow Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `slideshows`[0m
+  [4;35;1mSlideshow Load (15.6ms)[0m   [0mSELECT * FROM `slideshows` WHERE (`slideshows`.`id` = 1) [0m
+  [4;36;1mSlideshow Load (0.0ms)[0m   [0;1mSELECT * FROM `slideshows` WHERE (`slideshows`.`id` = 1) [0m
+  [4;35;1mSlide Load (0.0ms)[0m   [0mSELECT * FROM `slides` WHERE (`slides`.slideshow_id = 1) ORDER BY position[0m
+  [4;36;1mSlide Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `slides`[0m
+  [4;35;1mPhoto Load (15.6ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = 2) [0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 3) [0m
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = 4) [0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 5) [0m
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = 6) [0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 7) [0m
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = 8) [0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 9) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSlide Update (0.0ms)[0m   [0mUPDATE `slides` SET position = (position - 1) WHERE (slideshow_id = 1 AND position > 1) [0m
+  [4;36;1mSlide Load (0.0ms)[0m   [0;1mSELECT * FROM `slides` WHERE (slideshow_id = 1 AND id != 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mSlide Update (0.0ms)[0m   [0mUPDATE `slides` SET `updated_at` = '2010-09-25 06:15:58', `position` = 9 WHERE `id` = 1[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSlideshow Load (0.0ms)[0m   [0mSELECT * FROM `slideshows` WHERE (`slideshows`.`id` = 1) [0m
+  [4;36;1mSlide Load (0.0ms)[0m   [0;1mSELECT * FROM `slides` WHERE (`slides`.slideshow_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`name` = '--- :ALL\n') LIMIT 1[0m
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`name` = 'All') LIMIT 1[0m
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.parent_id = 1) [0m
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.parent_id = 2) [0m
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`name` = 'Family') LIMIT 1[0m
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-09-25 14:22:45) [GET]
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/photos
+Rendering photos/index
+  [4;35;1mPhoto Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Completed in 578ms (View: 500, DB: 16) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 14:22:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/photos/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 14:22:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 2) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 78ms (View: 0, DB: 16) | 200 OK [http://localhost/photos/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#edit (for 127.0.0.1 at 2010-09-25 14:22:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (15.6ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/edit
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/photos/1/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 14:23:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/photos/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show to xml (for 127.0.0.1 at 2010-09-25 14:23:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Completed in 62ms (View: 47, DB: 16) | 200 OK [http://localhost/photos/1.xml]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-09-25 14:25:39) [GET]
+  [4;36;1mPhoto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/photos
+Rendering photos/new
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new to xml (for 127.0.0.1 at 2010-09-25 14:25:44) [GET]
+  [4;35;1mPhoto Columns (31.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Completed in 62ms (View: 0, DB: 31) | 200 OK [http://localhost/photos/new.xml]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-25 14:28:23) [GET]
+
+ActionController::RoutingError (No route matches "/category" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-09-25 14:28:29) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendering template within layouts/categories
+Rendering categories/index
+  [4;35;1mCategory Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+Completed in 62ms (View: 31, DB: 16) | 200 OK [http://localhost/categories/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-09-25 14:28:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (15.6ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 1) [0m
+Rendering template within layouts/categories
+Rendering categories/show
+Completed in 187ms (View: 31, DB: 31) | 200 OK [http://localhost/categories/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-09-25 14:28:36) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mCategory Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 4) [0m
+Rendering template within layouts/categories
+Rendering categories/edit
+Completed in 62ms (View: 31, DB: 16) | 200 OK [http://localhost/categories/4/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SlidesController#index (for 127.0.0.1 at 2010-09-25 14:28:43) [GET]
+  [4;36;1mSlide Load (0.0ms)[0m   [0;1mSELECT * FROM `slides` [0m
+Rendering template within layouts/slides
+Rendering slides/index
+  [4;35;1mSlide Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `slides`[0m
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/slides]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-25 14:28:50) [GET]
+
+ActionController::RoutingError (No route matches "/slideshow" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SlideshowsController#index (for 127.0.0.1 at 2010-09-25 14:28:55) [GET]
+  [4;36;1mSlideshow Load (0.0ms)[0m   [0;1mSELECT * FROM `slideshows` [0m
+Rendering template within layouts/slideshows
+Rendering slideshows/index
+  [4;35;1mSlideshow Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `slideshows`[0m
+Completed in 156ms (View: 109, DB: 0) | 200 OK [http://localhost/slideshows]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SlideshowsController#edit (for 127.0.0.1 at 2010-09-25 14:28:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSlideshow Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `slideshows`[0m
+  [4;35;1mSlideshow Load (15.6ms)[0m   [0mSELECT * FROM `slideshows` WHERE (`slideshows`.`id` = 1) [0m
+Rendering template within layouts/slideshows
+Rendering slideshows/edit
+Completed in 78ms (View: 31, DB: 31) | 200 OK [http://localhost/slideshows/1/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` LIMIT 1[0m
+  [4;35;1mPhoto Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-25 15:30:26) [GET]
+
+ActionController::RoutingError (No route matches "/photots/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-09-25 15:30:38) [GET]
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/photos
+Rendering photos/index
+  [4;35;1mPhoto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Completed in 141ms (View: 125, DB: 0) | 200 OK [http://localhost/photos/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 15:33:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (15.6ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+ERROR: compiling _run_erb_app47views47photos47show46html46erb RAISED compile error
+D:/MyDocs/rorproj/phototshare/app/views/photos/show.html.erb:11: syntax error, unexpected kENSURE, expecting kEND
+D:/MyDocs/rorproj/phototshare/app/views/photos/show.html.erb:13: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47photos47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<p>\n "
+;  for column in Photo.content_columns ; @output_buffer.concat "\n   <b>"
+; @output_buffer.concat(( column.human_name ).to_s); @output_buffer.concat ":</b>\n  "
+; @output_buffer.concat(( photo.send(column.name) ).to_s); @output_buffer.concat "\n</p>\n\n\n"
+
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_photo_path(@photo) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Back', photos_path ).to_s); @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: D:/MyDocs/rorproj/phototshare/app/views/photos/show.html.erb:13:in `compile!'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Ruby187/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+D:/MyDocs/rorproj/phototshare/app/controllers/photos_controller.rb:18:in `show'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Ruby187/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130
+D:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+D:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:159:in `process_client'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `each'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `process_client'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `initialize'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `new'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `initialize'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `new'
+D:/Ruby187/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `run'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+D:/Ruby187/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+D:/Ruby187/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+D:/Ruby187/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+D:/MyDocs/rorproj/phototshare/app/views/photos/show.html.erb:11: syntax error, unexpected kENSURE, expecting kEND
+D:/MyDocs/rorproj/phototshare/app/views/photos/show.html.erb:13: syntax error, unexpected $end, expecting kEND) on line #11 of app/views/photos/show.html.erb:
+8: <%= link_to 'Edit', edit_photo_path(@photo) %> |
+9: <%= link_to 'Back', photos_path %>
+
+    app/views/photos/show.html.erb:13:in `compile!'
+    app/controllers/photos_controller.rb:18:in `show'
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 15:34:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (15.6ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+
+ActionView::TemplateError (undefined local variable or method `photo' for #<ActionView::Base:0x49bd560>) on line #4 of app/views/photos/show.html.erb:
+1: <p>
+2:  <% for column in Photo.content_columns %>
+3:    <b><%= column.human_name %>:</b>
+4:   <%= photo.send(column.name) %>
+5: <% end %>
+6: </p>
+7: 
+
+    app/views/photos/show.html.erb:4
+    app/views/photos/show.html.erb:2:in `each'
+    app/views/photos/show.html.erb:2
+    app/controllers/photos_controller.rb:18:in `show'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 15:34:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 62ms (View: 31, DB: 16) | 200 OK [http://localhost/photos/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 15:34:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/photos/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-09-25 15:41:41) [GET]
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/photos
+Rendering photos/index
+  [4;35;1mPhoto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Completed in 62ms (View: 62, DB: 0) | 200 OK [http://localhost/photos/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 15:41:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 31ms (View: 16, DB: 16) | 200 OK [http://localhost/photos/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-09-25 15:44:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (15.6ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 172ms (View: 125, DB: 31) | 200 OK [http://localhost/photos/1]
+  [4;36;1mSQL (203.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#edit (for 127.0.0.1 at 2010-09-25 15:46:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/edit
+Completed in 125ms (View: 78, DB: 0) | 200 OK [http://localhost/photos/1/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-09-25 15:47:24) [GET]
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/photos
+Rendering photos/index
+  [4;35;1mPhoto Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Completed in 94ms (View: 62, DB: 16) | 200 OK [http://localhost/photos/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SlidesController#index (for 127.0.0.1 at 2010-09-25 15:47:43) [GET]
+  [4;36;1mSlide Load (0.0ms)[0m   [0;1mSELECT * FROM `slides` [0m
+Rendering template within layouts/slides
+Rendering slides/index
+  [4;35;1mSlide Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `slides`[0m
+Completed in 78ms (View: 47, DB: 16) | 200 OK [http://localhost/slides/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SlidesController#show (for 127.0.0.1 at 2010-09-25 15:48:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSlide Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `slides`[0m
+  [4;35;1mSlide Load (0.0ms)[0m   [0mSELECT * FROM `slides` WHERE (`slides`.`id` = 1) [0m
+Rendering template within layouts/slides
+Rendering slides/show
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/slides/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100925015632)
+Migrating to CreateSlides (20100925032119)
+Migrating to CreateSlideshows (20100925032148)
+Migrating to CreateCategories (20100925032227)
+Migrating to AddDescToPhotos (20100925075849)
+  [4;36;1mSQL (218.7ms)[0m   [0;1mALTER TABLE `photos` ADD `thumbnail` varchar(255)[0m
+  [4;35;1mSQL (250.0ms)[0m   [0mALTER TABLE `photos` ADD `description` varchar(255)[0m
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` [0m
+  [4;35;1mPhoto Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Update (0.0ms)[0m   [0mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'balboa_park_m.jpg' WHERE `id` = 1[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (0.0ms)[0m   [0;1mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'camel_m.jpg' WHERE `id` = 2[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Update (0.0ms)[0m   [0mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'cat_and_candles_m.jpg' WHERE `id` = 3[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (0.0ms)[0m   [0;1mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'hut_m.jpg' WHERE `id` = 4[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Update (0.0ms)[0m   [0mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'mosaic_m.jpg' WHERE `id` = 5[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (0.0ms)[0m   [0;1mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'polar_bear_m.jpg' WHERE `id` = 6[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Update (0.0ms)[0m   [0mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'police_m.jpg' WHERE `id` = 7[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (0.0ms)[0m   [0;1mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'sleeping_dog_m.jpg' WHERE `id` = 8[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Update (0.0ms)[0m   [0mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'stairs_m.jpg' WHERE `id` = 9[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (0.0ms)[0m   [0;1mUPDATE `photos` SET `updated_at` = '2010-09-25 08:01:15', `thumbnail` = 'cat_m.jpg' WHERE `id` = 10[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100925075849')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `categories_photos`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mdescribe `categories_photos`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `categories_photos`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `photos`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW KEYS FROM `photos`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `slides`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mdescribe `slides`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `slides`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `slideshows`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `slideshows`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `slideshows`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-09-25 16:01:26) [GET]
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/photos
+Rendering photos/index
+  [4;35;1mPhoto Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Completed in 78ms (View: 47, DB: 16) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#edit (for 127.0.0.1 at 2010-09-25 16:01:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/edit
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/photos/1/edit]
