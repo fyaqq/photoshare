@@ -4,7 +4,7 @@ class AddDescToPhotos < ActiveRecord::Migration
     add_column :photos, :description, :string
 
     Photo.all.each do |photo|
-      photo.update_attribute :thumbnail, photo.filename.gsub('.','_m.')
+      photo.update_attribute :thumbnail, photo.filename.gsub('.','_t.')
     end
   end
 
