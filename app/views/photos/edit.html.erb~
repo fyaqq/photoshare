@@ -1,5 +1,10 @@
 <h1>Editing photo</h1>
+<<<<<<< HEAD
+<%= render :partial=>'form' %>
+<!--
+=======
 
+>>>>>>> bc6518597a96ffd6fd4db7324df03ddf8dedad8b
 <% form_for(@photo) do |f| %>
   <%= f.error_messages %>
 
@@ -11,6 +16,12 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
+<<<<<<< HEAD
+-->
+<%= link_to 'Show', @photo %> |
+<%= link_to 'Back', photos_path %>
+=======
 
 <%= link_to 'Show', @photo %> |
 <%= link_to 'Back', photos_path %>
+>>>>>>> bc6518597a96ffd6fd4db7324df03ddf8dedad8b
