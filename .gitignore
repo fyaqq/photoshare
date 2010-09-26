@@ -1,6 +1,10 @@
-.*~
-*~
+#.*~
+#*~
 #.*.~
-.*.swp
+*.swp
+*.out
+*~
 log/*.log
-Thumbs.db
+tmp/*
+config/database.yml
+
