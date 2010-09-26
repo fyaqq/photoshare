@@ -8,7 +8,7 @@
 
 <% @categories.each do |category| %>
   <tr>
-    <td><%=h category.name %></td>
+    <td><%=h category.long_name %></td>
     <td><%=h category.parent_id %></td>
     <td><%= link_to 'Show', category %></td>
     <td><%= link_to 'Edit', edit_category_path(category) %></td>

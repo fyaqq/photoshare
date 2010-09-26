@@ -1,0 +1,16 @@
+<%= error_messages_for :category %>
+
+<!--[form:category]-->
+<% form_for(@category) do |f| %>
+  <p>
+    <%= f.label :name, '名称' %><br/>
+    <%= f.text_field :name %>
+    </p>
+  <p><%= f.label :parent_id,'上级分类' %><br/>
+  <%= f.collection_select(:parent_id,Category.all(:order=>"name"), :id,:long_name
+                          #<!--,{:include_blank=>'请选择',:prompt=>'请选择一个类型'},{:multiple=>true}-->
+                         ) %></p>
+  <p> <%= f.submit 'Submit' %></p>
+<% end %>
+
+

@@ -17,6 +17,10 @@
     <%= f.text_field :description %>
   </p>
   <p>
+    <%= f.label :categories,'分类' %><br/>
+    <%= f.collection_select :categories, Category.all,:id,:long_name, {:selected_key=>@photo.categories.collect{ |c| c.id.to_i }} %>
+  </p>
+  <p>
     <%= f.submit "Submit" %>
   </p>
 <% end %>

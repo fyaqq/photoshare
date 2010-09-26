@@ -10,7 +10,8 @@
 <% @photos.each do |photo| %>
   <tr>
     <td><%= link_to image_tag("photos/#{photo.thumbnail}",:size=>'75x56',:border=>1,:id=>'thumbnail'), 
-                      url_for(:action=>'show',:id=>photo) %> </td>
+    photo_path(photo) %>
+  </td>
     <% for column in Photo.content_columns %>
       <td><%= photo.send(column.name)%></td>
     <% end %>
