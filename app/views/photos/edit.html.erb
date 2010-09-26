@@ -1,0 +1,17 @@
+<h1>Editing photo</h1>
+<%= render :partial=>'form' %>
+<!--
+<% form_for(@photo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :filename %><br />
+    <%= f.text_field :filename %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+-->
+<%= link_to 'Show', @photo %> |
+<%= link_to 'Back', photos_path %>

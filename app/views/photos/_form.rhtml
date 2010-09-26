@@ -1,0 +1,19 @@
+<%= error_messages_for :photo %>
+<% form_for(@photo) do |f| %>
+ <p>
+    <%= f.label :filename, '名称' %><br />
+    <%= f.text_field :filename %>
+  </p> 
+  <p>
+    <%= f.label :created_at, '创建时间' %><br/>
+    <%= f.datetime_select :created_at %>
+  </p>
+  <p>
+    <%= f.label :thumbnail,'缩略图'%><br/>
+    <%= f.text_field :thumbnail %>
+  </p>
+  <p>
+    <%= f.label :description,'描述' %><br/>
+    <%= f.text_field :description %>
+  </p>
+<% end %>

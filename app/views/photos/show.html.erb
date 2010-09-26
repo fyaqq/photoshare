@@ -1,0 +1,10 @@
+ <% for column in Photo.content_columns %>
+<p>
+   <b><%= column.human_name %>:</b>
+  <%= @photo.send(column.name) %>
+</p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
