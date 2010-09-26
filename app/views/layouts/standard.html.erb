@@ -4,11 +4,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Slides: <%= controller.action_name %></title>
+  <title>Photos Share ></title>
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
-
+  <div style="background-color:LightBlue">
+    <p> &nbsp; 
+    <%= link_to 'Photos', :controller=> 'photos', :action=>'index' %>
+    &nbsp;
+    <%= link_to 'Categories', :controller => 'categories', :action=>'index' %>
+    &nbsp;
+    <%= link_to 'Slideshows', :controller => 'slideshows', :action=>'index' %>
+    </p>
+  </div>
 <p style="color: green"><%= notice %></p>
 
 <%= yield %>
