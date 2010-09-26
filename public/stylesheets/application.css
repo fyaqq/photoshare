@@ -4,6 +4,14 @@ body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
+  background: #eee;
+}
+
+.navbar {
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: LightBlue;
 }
 
 pre {

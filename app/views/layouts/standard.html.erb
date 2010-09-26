@@ -5,17 +5,18 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Photos Share ></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'photos' %>
 </head>
 <body>
-  <div style="background-color:LightBlue">
-    <p> &nbsp; 
+  <div class="navbar">
+    &nbsp; 
     <%= link_to 'Photos', :controller=> 'photos', :action=>'index' %>
     &nbsp;
     <%= link_to 'Categories', :controller => 'categories', :action=>'index' %>
     &nbsp;
     <%= link_to 'Slideshows', :controller => 'slideshows', :action=>'index' %>
-    </p>
+    
   </div>
 <p style="color: green"><%= notice %></p>
 

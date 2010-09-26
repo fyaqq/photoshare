@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :photos
 
+  map.connect '', :controller=> 'photos' #, :action => "index"
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
