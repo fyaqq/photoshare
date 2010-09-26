@@ -9,12 +9,12 @@
 
 <% @photos.each do |photo| %>
   <tr>
+    <td><%= link_to image_tag("photos/#{photo.thumbnail}",:size=>'75x56',:border=>1), 
+                      url_for(:action=>'show',:id=>photo) %> </td>
     <% for column in Photo.content_columns %>
-      <td><%=h photo.send(column.name)%></td>
+      <td><%= photo.send(column.name)%></td>
     <% end %>
-    <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', photo, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to '删除', photo, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

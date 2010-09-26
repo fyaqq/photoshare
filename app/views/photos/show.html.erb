@@ -1,3 +1,4 @@
+<%= image_tag 'photos/' + @photo.filename %>
  <% for column in Photo.content_columns %>
 <p>
    <b><%= column.human_name %>:</b>
