@@ -57,7 +57,9 @@ class PhotosController < ApplicationController
   # PUT /photos/1.xml
   def update
     @photo = Photo.find(params[:id])
-
+    # to update categories for a photo
+    @photo.categories = Category.find(params[:photo][:categories]) if params[:photo][:categories]
+    params[:photo].delete(:categories)
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
         format.html { redirect_to(@photo, :notice => 'Photo was successfully updated.') }
